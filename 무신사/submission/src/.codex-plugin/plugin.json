@@ -1,0 +1,16 @@
+{
+  "name": "musinsa-contract-risk-scanner",
+  "version": "0.1.0",
+  "description": "무신사 입점·납품 계약서에서 대규모유통업법·공정거래법상 리스크 조항(멀티호밍 제한, 최혜대우, 판촉비 전가, 부당 반품, 경영정보 요구, 정산 지연)을 탐지해 위험등급·근거 법조문·대체 문구를 제안하는 사전 리스크 점검 도구. 법률 자문이 아닌 검토 우선순위 큐를 생성한다.",
+  "author": "AX Hackathon 참가자",
+  "license": "MIT",
+  "skills": "./skills/",
+  "keywords": [
+    "무신사",
+    "대규모유통업법",
+    "공정거래법",
+    "계약서-검토",
+    "compliance",
+    "risk-scanner"
+  ]
+}
