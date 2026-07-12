@@ -1,0 +1,108 @@
+{
+  "paths": {
+    "default_demo_input": "fixtures/sample_contract_01.md",
+    "rules": "rules/clause_rules.json",
+    "roles_dir": "roles",
+    "templates_dir": "templates",
+    "input_dir": "../../../input",
+    "output_dir": "../../../output",
+    "learning_memory": "../../../output/_learnings.md"
+  },
+  "privacy": {
+    "mode": "local_only",
+    "allowed_model_context": [
+      "synthetic_fixtures",
+      "explicit_user_paste"
+    ],
+    "redacted_model_review": false,
+    "raw_file_text_to_roles": false
+  },
+  "scanner": {
+    "script": "scripts/scan_contract.py",
+    "default_min_risk": "하",
+    "baseline_artifact": "<run-id>--baseline.json"
+  },
+  "artifacts": {
+    "input": "<run-id>--input.md",
+    "input_record_dir": "../../../input/<run-id>--input.md",
+    "output_artifact_set": "../../../output/<run-id>--{baseline.json,review.md,report.md,state.md}",
+    "baseline": "<run-id>--baseline.json",
+    "review": "<run-id>--review.md",
+    "report": "<run-id>--report.md",
+    "state": "<run-id>--state.md"
+  },
+  "memory": {
+    "append_only": true,
+    "reread_before_append": true,
+    "inject_sections": [
+      "false-positive registry",
+      "rule gaps",
+      "rewrite candidates",
+      "process lessons"
+    ]
+  },
+  "report_policy": {
+    "disclaimer": "본 리포트는 법률 자문이 아니다. 계약 검토 우선순위를 정하기 위한 사전 점검 결과입니다.",
+    "forbidden_legal_words": [
+      "위법 확정",
+      "불법",
+      "법적으로 위반",
+      "illegal"
+    ],
+    "allowed_framing": [
+      "리스크 후보",
+      "검토 필요",
+      "근거 법조문 후보",
+      "대체 문구 초안"
+    ]
+  },
+  "validation": {
+    "required_state_statuses": [
+      "created",
+      "scanned",
+      "reviewed",
+      "reported"
+    ],
+    "forbidden_network_tokens": [
+      "curl",
+      "requests",
+      "urllib",
+      "http://",
+      "https://",
+      "gh ",
+      "sqlite",
+      "chromadb",
+      "faiss",
+      "pinecone"
+    ],
+    "required_baseline_keys": [
+      "source",
+      "count",
+      "findings"
+    ]
+  },
+  "role_inputs": {
+    "intake-normalizer": [
+      "input path",
+      "input description",
+      "privacy mode"
+    ],
+    "clause-adjudicator": [
+      "baseline findings",
+      "clause labels and rule metadata under local_only",
+      "redacted snippets only when explicit_user_paste or redacted_model_review is enabled",
+      "learning memory excerpts"
+    ],
+    "report-writer": [
+      "review decisions",
+      "sanitized baseline summary without snippet values",
+      "report policy",
+      "rewrite candidates"
+    ],
+    "run-validator": [
+      "generated artifacts",
+      "validation policy",
+      "learning memory"
+    ]
+  }
+}
