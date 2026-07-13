@@ -1,0 +1,34 @@
+{
+  "name": "samil-independence-screening",
+  "version": "0.1.0",
+  "description": "Screens audit clients against non-audit services for independence risk using supplied rules and user-provided CSVs.",
+  "author": {
+    "name": "AX Hackathon Samil Team"
+  },
+  "license": "MIT",
+  "keywords": [
+    "audit",
+    "independence",
+    "samil",
+    "pwc",
+    "compliance"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Samil Independence Screening",
+    "shortDescription": "Audit and non-audit independence risk screening.",
+    "longDescription": "A repeatable Codex plugin for Samil PwC that turns supplied independence rules and user-provided audit/non-audit service lists into an evidence-backed triage report with bounded local learning.",
+    "developerName": "AX Hackathon Samil Team",
+    "category": "Productivity",
+    "capabilities": [
+      "Write",
+      "Automation"
+    ],
+    "defaultPrompt": [
+      "Screen these audit and non-audit CSVs for independence risk using the supplied rules.",
+      "Create a repeatable independence risk report with evidence notes and learning observations.",
+      "Explain which services need additional review without making final permission claims."
+    ],
+    "brandColor": "#D04A02"
+  }
+}
