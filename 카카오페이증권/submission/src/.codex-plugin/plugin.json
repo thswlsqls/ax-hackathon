@@ -1,0 +1,24 @@
+{
+  "name": "mts-stability-guard",
+  "version": "0.2.0",
+  "description": "카카오페이증권 MTS·해외주식 서비스의 반복 전산장애 재발을 막기 위한 안정성 가드. 공개 장애 이력에서 실패 패턴을 뽑아 릴리즈 전 회귀·부하·장애주입 테스트 시나리오와 안정성 체크리스트를 생성한다.",
+  "author": {
+    "name": "AX Hackathon Team"
+  },
+  "license": "MIT",
+  "keywords": ["fintech", "securities", "reliability", "chaos-testing", "mts"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "MTS Stability Guard",
+    "shortDescription": "공개 장애 이력으로 트레이딩 안정성을 검증합니다.",
+    "longDescription": "공개 MTS·해외주식 장애 이력을 실패 패턴으로 분석하고, 모의 브로커에서 재현·방어·재검증하는 오프라인 안정성 가드입니다.",
+    "developerName": "AX Hackathon Team",
+    "category": "Developer Tools",
+    "capabilities": ["Analysis", "Testing", "Write"],
+    "defaultPrompt": [
+      "공개 장애 이력에서 재발 방지 시나리오를 만들어 주세요.",
+      "모의 브로커 장애의 방어 전후 결과를 검증해 주세요.",
+      "트레이딩 백엔드 안정성 체크리스트를 만들어 주세요."
+    ]
+  }
+}
