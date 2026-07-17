@@ -1,0 +1,19 @@
+{
+  "prohibited_service_types": [
+    "financial_system_implementation",
+    "bookkeeping",
+    "valuation_for_audit_subject"
+  ],
+  "review_service_types": [
+    "tax_advisory",
+    "internal_control_advisory",
+    "training"
+  ],
+  "network_service_keywords": [
+    "pwc",
+    "network",
+    "shared brand",
+    "공유 브랜드",
+    "네트워크"
+  ]
+}

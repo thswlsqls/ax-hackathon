@@ -1,0 +1,5 @@
+client_id,client_name,service_type,service_description,service_year,fee_million_krw
+A001,상장제조 주식회사,financial_system_implementation,ERP 재무모듈 구축 및 결산 자동화 설계,2025,320
+A002,핀테크홀딩스,tax_advisory,국제조세 자문 및 이전가격 문서화,2025,85
+A003,리테일커머스,training,내부회계관리제도 교육 워크숍,2025,20
+N001,비감사고객,data_analytics,비감사 고객 데이터 분석 자문,2025,110

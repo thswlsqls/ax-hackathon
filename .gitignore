@@ -33,3 +33,26 @@ reference/
 !무신사/submission/output/sanitized-demo/state.md
 !삼일회계법인/submission/logs/submission-evidence.jsonl
 !카카오페이증권/submission/logs/submission-evidence.jsonl
+
+# --- 추가 공개 실행 예시 (심사자용 정제 산출물) ---
+# 무신사: 대표 시나리오 run. source_path/scanner_input 절대경로를 sanitized-demo와
+# 동일하게 상대경로(./무신사/...)로 정제해 로컬 홈 경로 노출을 제거함.
+!무신사/submission/input/qa-demo/
+!무신사/submission/output/qa-demo/
+!무신사/submission/input/debug-audit-20260709110145/
+!무신사/submission/output/debug-audit-20260709110145/
+!무신사/submission/input/qa-final-20260709105939/
+!무신사/submission/output/qa-final-20260709105939/
+# 삼일회계법인: 합성 데이터(가상 고객명) 기반 pytest 실행 예시. 절대경로·비밀정보 없음.
+!삼일회계법인/submission/input/
+!삼일회계법인/submission/output/
+!삼일회계법인/submission/input/pytest-first/
+!삼일회계법인/submission/output/pytest-first/
+!삼일회계법인/submission/input/pytest-second/
+!삼일회계법인/submission/output/pytest-second/
+!삼일회계법인/submission/input/pytest-learning/
+!삼일회계법인/submission/output/pytest-learning/
+!삼일회계법인/submission/input/pytest-injection/
+!삼일회계법인/submission/output/pytest-injection/
+!삼일회계법인/submission/input/pytest-failure/
+!삼일회계법인/submission/output/pytest-failure/
