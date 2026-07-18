@@ -56,3 +56,15 @@ reference/
 !삼일회계법인/submission/output/pytest-injection/
 !삼일회계법인/submission/input/pytest-failure/
 !삼일회계법인/submission/output/pytest-failure/
+# 카카오페이증권: 대표 시나리오 run. state.json 절대경로만 상대경로로 정제.
+# output run은 output/runs/<run> 중첩 구조라 runs 하위를 재무시 후 큐레이션 run만 재포함.
+!카카오페이증권/submission/input/
+!카카오페이증권/submission/input/ulw-happy/
+!카카오페이증권/submission/input/ulw-happy-remediation/
+!카카오페이증권/submission/input/docs-qa-20260709/
+!카카오페이증권/submission/output/
+!카카오페이증권/submission/output/runs/
+카카오페이증권/submission/output/runs/?*
+!카카오페이증권/submission/output/runs/ulw-happy/
+!카카오페이증권/submission/output/runs/ulw-happy-remediation/
+!카카오페이증권/submission/output/runs/docs-qa-20260709/

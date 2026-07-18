@@ -16,6 +16,11 @@ CORE_TEST_FILES = (
     "test_run_pipeline.py",
 )
 CORE_TEST_BASELINE = 70
+# NOTE: `input`/`output` are intentionally NOT treated as generated artifacts.
+# Curated, sanitized sample runs are published under these directories to stay
+# consistent with the sibling submissions (무신사/삼일회계법인), which ship their
+# example runs the same way. Uncurated runtime scratch (test-runs, manual, caches)
+# is still kept out of the packaged tree via .gitignore.
 GENERATED_DIRECTORY_NAMES = {
     ".codebase-memory",
     ".mypy_cache",
@@ -23,8 +28,6 @@ GENERATED_DIRECTORY_NAMES = {
     ".pytest_cache",
     ".ruff_cache",
     "__pycache__",
-    "input",
-    "output",
 }
 GENERATED_FILE_NAMES = {".DS_Store", "chaos-report.json", "stability-report.json"}
 GENERATED_SUFFIXES = {".pyc", ".pyo"}
@@ -127,11 +130,13 @@ class PackagingCleanlinessTest(unittest.TestCase):
     def test_generated_artifact_detector_finds_controlled_run_evidence(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:
             root = Path(temporary_directory)
-            state = root / "output" / "runs" / "controlled" / "state.json"
-            state.parent.mkdir(parents=True)
-            _ = state.write_text("{}\n", encoding="utf-8")
+            # A generated run report is detected by name even under a retained
+            # output/ tree (input/output themselves are no longer forbidden).
+            report = root / "output" / "runs" / "controlled" / "chaos-report.json"
+            report.parent.mkdir(parents=True)
+            _ = report.write_text("{}\n", encoding="utf-8")
 
-            self.assertIn(root / "output", generated_artifacts(root))
+            self.assertIn(report, generated_artifacts(root))
 
             logs = root / "logs"
             external_logs = root / "external-logs"
