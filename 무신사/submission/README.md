@@ -25,7 +25,7 @@ submission/
 │   ├── deep-research-report-01.md          # 공개 자료 기반 문제 정의 보고서 (근거)
 │   └── submission-answers.md               # 예선 5문항 상세 답변 (출처 URL 포함)
 └── logs/README.md                          # 대화 로그 제출 안내 (세션 로그 미동봉)
-submission/input/sanitized-demo/input.md    # 공개 이력에 동봉한 단일 input record
+submission/input/sanitized-demo/input.md    # 공개 이력에 동봉한 정제 예시 input record 중 하나
 submission/output/<run-id>--{baseline.json,review.md,report.md,state.md}                 # 실행별 output artifact만 저장
 submission/output/_learnings.md             # append-only 실행 학습 메모리
 ```
@@ -70,7 +70,7 @@ Codex에서는 플러그인을 로드한 뒤 "이 계약서 리스크 조항 점
 ### 5. 어떻게 검증했나요?
 `fixtures/`에 4개 샘플(리스크 포함본 A, 정비본 B, 혼합본 C, 조항 헤더 없는 평문)과 기대 결과(`EXPECTED.md`)를 두고 `scripts/verify_fixtures.py`로 13개 시나리오를 골든 테스트로 검증해 전부 통과했습니다. A는 상 3건+중 4건, B는 상 0건, C는 위험 조항 3건만 선별 탐지(파생 조항 번호 `제5조의2` 분할 포함), 평문은 문단 fallback으로 2건이 나와야 합니다. 또한 `제1조 판매 채널`, `제2조: 판매가격`, `제3조 [판매촉진]`처럼 괄호 없는 현실적인 조항 제목 변형과 법령 인용의 `제10조`가 계약 조항 헤더로 오분할되지 않는지, 없는 파일이 exit 2를 반환하는지, 빈 파일이 0건으로 종료되는지도 확인합니다.
 
-리팩토링 후에는 `scripts/test_pipeline_edges.py`로 파이프라인 엣지케이스 22건을 검증합니다. 기존 run-id 재실행 시 `input/<run-id>--input.md`와 `output/<run-id>--*` 어느 쪽도 덮어쓰지 않는지, 없는 입력이 부분 산출물을 남기지 않는지, `output/`에 `<run-id>--input.md`가 섞이지 않는지, 공개 이력에 동봉한 단일 `sanitized-demo`가 `input/sanitized-demo/input.md`와 `output/sanitized-demo/baseline.json`·`review.md`·`report.md`·`state.md` 한 쌍을 갖는지 확인합니다. 또한 `baseline.json`의 raw `snippet`이 `review.md`·`report.md`로 복사되지 않는지, `_learnings.md` 기존 내용이 보존되고 실행 row가 한 번만 append되는지, `validate_pipeline.py`가 같은 입력·출력 디렉터리에서 두 번 연속 통과하는지, validator negative sample 3종이 실제로 거부되는지, `PYTHONDONTWRITEBYTECODE=1` 실행 후 `submission/src` 아래 bytecode cache가 생기지 않는지도 확인합니다. 최종 검증에서 `verify_fixtures.py`, `test_pipeline_edges.py`, `validate_pipeline.py` 반복 실행과 negative sample 검증이 모두 exit 0으로 통과했습니다. 상세는 `docs/submission-answers.md` 5번 참조.
+리팩토링 후에는 `scripts/test_pipeline_edges.py`로 파이프라인 엣지케이스 22건을 검증합니다. 기존 run-id 재실행 시 `input/<run-id>--input.md`와 `output/<run-id>--*` 어느 쪽도 덮어쓰지 않는지, 없는 입력이 부분 산출물을 남기지 않는지, `output/`에 `<run-id>--input.md`가 섞이지 않는지, 공개 이력에 동봉한 `sanitized-demo`가 `input/sanitized-demo/input.md`와 `output/sanitized-demo/baseline.json`·`review.md`·`report.md`·`state.md` 한 쌍을 갖는지 확인합니다. 또한 `baseline.json`의 raw `snippet`이 `review.md`·`report.md`로 복사되지 않는지, `_learnings.md` 기존 내용이 보존되고 실행 row가 한 번만 append되는지, `validate_pipeline.py`가 같은 입력·출력 디렉터리에서 두 번 연속 통과하는지, validator negative sample 3종이 실제로 거부되는지, `PYTHONDONTWRITEBYTECODE=1` 실행 후 `submission/src` 아래 bytecode cache가 생기지 않는지도 확인합니다. 최종 검증에서 `verify_fixtures.py`, `test_pipeline_edges.py`, `validate_pipeline.py` 반복 실행과 negative sample 검증이 모두 exit 0으로 통과했습니다. 상세는 `docs/submission-answers.md` 5번 참조.
 
 ---
 

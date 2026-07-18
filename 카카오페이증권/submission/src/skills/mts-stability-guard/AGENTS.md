@@ -51,9 +51,9 @@ mts-stability-guard/
 ## TEST CONTRACT
 
 - Use stdlib `unittest`; do not introduce pytest or third-party tooling.
-- Subclass behavior tests from `SubmissionIOTestCase`. Keep `PackagingCleanlinessTest` as the read-only `unittest.TestCase` exception so it can inspect a pristine package before run evidence exists.
+- Subclass behavior tests from `SubmissionIOTestCase`. Keep `PackagingCleanlinessTest` as the read-only `unittest.TestCase` exception so it inspects the packaged tree without creating run evidence of its own.
 - Use `tempfile.TemporaryDirectory` and explicit input/output roots for pipeline tests; never reuse a repository run ID.
-- Run with `PYTHONDONTWRITEBYTECODE=1`; packaging tests pin the 70-test core baseline, while full discovery covers 81 tests, and reject caches, run evidence, root reports, third-party imports, `requirements.txt`, and documentation placeholders.
+- Run with `PYTHONDONTWRITEBYTECODE=1`; packaging tests pin the 70-test core baseline, while full discovery covers 81 tests, and reject caches, root reports, third-party imports, `requirements.txt`, and documentation placeholders. Curated, sanitized `input`/`output` example runs are permitted (consistent with the sibling submissions).
 - Adding or renaming core tests changes the 70-test baseline and 81-test total. Update the packaging constant, root README, and `docs/예선-질문-5문항.md` together.
 - Questionnaire answers must remain 700–800 characters; allowed log suffixes are `.md`, `.txt`, `.json`, `.jsonl`.
 
