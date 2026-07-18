@@ -1,0 +1,29 @@
+{
+  "run_id": "ulw-happy-remediation",
+  "started_at": "2026-07-09T11:13:41.425832+00:00",
+  "finished_at": "2026-07-09T11:13:41.428169+00:00",
+  "status": "succeeded",
+  "input_path": "./카카오페이증권/submission/src/skills/mts-stability-guard/data/incidents.sample.json",
+  "config_path": "./카카오페이증권/submission/src/skills/mts-stability-guard/config/stability-config.json",
+  "artifacts": {
+    "analysis": "./카카오페이증권/submission/output/runs/ulw-happy-remediation/analysis.json",
+    "chaos": "./카카오페이증권/submission/output/runs/ulw-happy-remediation/chaos.json",
+    "scenario_checklist": "./카카오페이증권/submission/output/runs/ulw-happy-remediation/scenario-checklist.md",
+    "state": "./카카오페이증권/submission/output/runs/ulw-happy-remediation/state.json",
+    "memory": "./카카오페이증권/submission/output/_learnings.md"
+  },
+  "analysis_summary": {
+    "incident_total": 5,
+    "scenario_total": 4,
+    "dominant_pattern": "internal_system"
+  },
+  "chaos_summary": {
+    "scenario_total": 3,
+    "guarded_crashed_total": 0
+  },
+  "error": null,
+  "input_artifacts": {
+    "input": "./카카오페이증권/submission/input/ulw-happy-remediation/incidents.json",
+    "config": "./카카오페이증권/submission/input/ulw-happy-remediation/stability-config.json"
+  }
+}

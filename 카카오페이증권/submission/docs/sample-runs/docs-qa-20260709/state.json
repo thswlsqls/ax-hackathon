@@ -1,0 +1,29 @@
+{
+  "run_id": "docs-qa-20260709",
+  "started_at": "2026-07-09T11:46:16.898508+00:00",
+  "finished_at": "2026-07-09T11:46:16.905598+00:00",
+  "status": "succeeded",
+  "input_path": "./카카오페이증권/submission/src/skills/mts-stability-guard/data/incidents.sample.json",
+  "config_path": "./카카오페이증권/submission/src/skills/mts-stability-guard/config/stability-config.json",
+  "artifacts": {
+    "analysis": "./카카오페이증권/submission/output/runs/docs-qa-20260709/analysis.json",
+    "chaos": "./카카오페이증권/submission/output/runs/docs-qa-20260709/chaos.json",
+    "scenario_checklist": "./카카오페이증권/submission/output/runs/docs-qa-20260709/scenario-checklist.md",
+    "state": "./카카오페이증권/submission/output/runs/docs-qa-20260709/state.json",
+    "memory": "./카카오페이증권/submission/output/_learnings.md"
+  },
+  "analysis_summary": {
+    "incident_total": 5,
+    "scenario_total": 4,
+    "dominant_pattern": "internal_system"
+  },
+  "chaos_summary": {
+    "scenario_total": 3,
+    "guarded_crashed_total": 0
+  },
+  "error": null,
+  "input_artifacts": {
+    "input": "./카카오페이증권/submission/input/docs-qa-20260709/incidents.json",
+    "config": "./카카오페이증권/submission/input/docs-qa-20260709/stability-config.json"
+  }
+}

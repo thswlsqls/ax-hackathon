@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "subject": "카카오페이증권 MTS·해외주식 서비스 전산장애 (공개 보도 기반 샘플)",
+    "note": "사실=일자·서비스·원인은 공개 보도 인용. 이 파일은 데모/시연용 공개 이력 샘플이며 회사 내부 데이터가 아니다.",
+    "sources": [
+      "연합뉴스(2023.07)",
+      "MBC(2025.10)",
+      "서울신문(2025.10)",
+      "다음 단독·서울경제TV(2026.04, 금감원 RFARS 제출 기준)"
+    ],
+    "source_urls": [
+      "https://www.yna.co.kr/view/AKR20230704027600002",
+      "https://imnews.imbc.com/news/2025/econo/article/6763918_36737.html",
+      "https://www.seoul.co.kr/news/economy/2025/10/10/20251010016002",
+      "https://v.daum.net/v/20260414050325002",
+      "https://v.daum.net/v/20251027071622348"
+    ]
+  },
+  "annual_counts": {
+    "basis": "금감원 전자금융사고보고(RFARS) 제출 기준 MTS 전산장애 건수",
+    "counts": {"2022": 4, "2023": 9, "2024": 11, "2025": 13, "2026Q1": 5},
+    "source": "다음 단독·서울경제TV(2026.04)",
+    "source_url": "https://v.daum.net/v/20260414050325002"
+  },
+  "incidents": [
+    {
+      "id": "2023-07-04",
+      "date": "2023-07-04",
+      "service": "해외주식",
+      "pattern": "overseas_latency",
+      "duration_min": 40,
+      "cause": "해외주식 거래 서비스 접속 지연(약 40분), 회사 보상 신청 접수 공지",
+      "source": "연합뉴스(2023.07)",
+      "source_url": "https://www.yna.co.kr/view/AKR20230704027600002"
+    },
+    {
+      "id": "2025-10-07",
+      "date": "2025-10-07",
+      "service": "미국주식",
+      "pattern": "internal_system",
+      "duration_min": null,
+      "cause": "내부 시스템 장애로 미국주식 주문 지연",
+      "source": "MBC(2025.10)",
+      "source_url": "https://imnews.imbc.com/news/2025/econo/article/6763918_36737.html"
+    },
+    {
+      "id": "2025-10-08",
+      "date": "2025-10-08",
+      "service": "미국주식",
+      "pattern": "external_broker_dependency",
+      "duration_min": null,
+      "cause": "미국 현지 중개사(드라이브웰스) 전산장애로 미국주식 체결 불가",
+      "source": "MBC/서울신문(2025.10)",
+      "source_url": "https://www.seoul.co.kr/news/economy/2025/10/10/20251010016002"
+    },
+    {
+      "id": "2025-10-09",
+      "date": "2025-10-09",
+      "service": "미국주식",
+      "pattern": "internal_system",
+      "duration_min": null,
+      "cause": "내부 시스템 장애로 미국주식 주문 지연",
+      "source": "MBC(2025.10)",
+      "source_url": "https://imnews.imbc.com/news/2025/econo/article/6763918_36737.html"
+    },
+    {
+      "id": "2025-10-10",
+      "date": "2025-10-10",
+      "service": "미국주식",
+      "pattern": "us_market_open_peak",
+      "duration_min": null,
+      "cause": "미국 정규장 개장 직후 앱 접속 불능",
+      "source": "다음(2025.10)",
+      "source_url": "https://v.daum.net/v/20251027071622348"
+    }
+  ]
+}

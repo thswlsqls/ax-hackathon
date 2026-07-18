@@ -1,0 +1,49 @@
+[
+  {
+    "pattern": "external_broker_dependency",
+    "public_basis": "2025-10-08 드라이브웰스 장애로 미국주식 체결 불가 (MBC/서울신문 2025.10)",
+    "injected": "브로커 place_order 전면 5xx (헬스는 정상 응답 = 오탐)",
+    "naive": {
+      "filled": 0,
+      "deferred": 0,
+      "crashed": 10
+    },
+    "guarded": {
+      "filled": 0,
+      "deferred": 10,
+      "crashed": 0
+    },
+    "guarded_broker_calls": 9,
+    "note": "[해석] 서킷 개방으로 guarded의 브로커 호출이 9회로 억제됨(서킷 없이 재시도만 있으면 최대 10주문×3시도=30회)."
+  },
+  {
+    "pattern": "overseas_latency/transient",
+    "public_basis": "해외주식 접속 지연·일시 장애 반복 (연합뉴스 2023.07 등)",
+    "injected": "주문당 2회 타임아웃 후 회복",
+    "naive": {
+      "filled": 0,
+      "deferred": 0,
+      "crashed": 6
+    },
+    "guarded": {
+      "filled": 6,
+      "deferred": 0,
+      "crashed": 0
+    }
+  },
+  {
+    "pattern": "us_market_open_peak",
+    "public_basis": "2025-10-10 개장 직후 앱 접속 불능 (다음 2025.10)",
+    "injected": "동시 주문 20건 vs 브로커 수용량 8건",
+    "naive": {
+      "filled": 8,
+      "deferred": 0,
+      "crashed": 12
+    },
+    "guarded": {
+      "filled": 8,
+      "deferred": 12,
+      "crashed": 0
+    }
+  }
+]
